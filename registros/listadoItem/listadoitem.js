@@ -1,4 +1,3 @@
-// En listadoitem.js:
 import { h_Header } from '../../componentes/header/header.js';
 
 function ItemDatos(alumnos) {
@@ -13,16 +12,34 @@ function ItemDatos(alumnos) {
     let foms = document.createElement('div');
     foms.className = "flist";
     
+    // Objeto para almacenar las asistencias temporalmente
+    const asistenciasTemporales = {};
+    
     // Usar los alumnos recibidos en lugar de la lista estática
     alumnos.forEach((alumno) => {
         const itemContainer = document.createElement('div');
         itemContainer.className = 'list-item';
         
-        // Contenido del item (nombre del alumno)
-        const content = document.createElement('div');
-        content.className = 'item-content';
-        content.textContent = alumno.nombre; // Asume que cada alumno tiene un campo 'nombre'
-        itemContainer.appendChild(content);
+        // Contenido del item (nombre + apellido)
+        const nameContainer = document.createElement('div');
+        nameContainer.className = 'item-content';
+        
+        const nameLine = document.createElement('div');
+        nameLine.className = 'name-line';
+        
+        const firstName = document.createElement('span');
+        firstName.className = 'first-name';
+        firstName.textContent = alumno.nombre;
+        
+        const lastName = document.createElement('span');
+        lastName.className = 'last-name';
+        lastName.textContent = alumno.apellido;
+        
+        nameLine.appendChild(firstName);
+        nameLine.appendChild(document.createTextNode(' '));
+        nameLine.appendChild(lastName);
+        nameContainer.appendChild(nameLine);
+        itemContainer.appendChild(nameContainer);
         
         // Botón ✓ (Asistió)
         const checkBtn = document.createElement('button');
@@ -33,7 +50,9 @@ function ItemDatos(alumnos) {
             this.classList.toggle('active');
             if (this.classList.contains('active')) {
                 xBtn.classList.remove('active');
-                registrarAsistencia(alumno.id, 'Si'); // Función para registrar asistencia
+                asistenciasTemporales[alumno.id] = 'Si';
+            } else {
+                delete asistenciasTemporales[alumno.id];
             }
         });
         itemContainer.appendChild(checkBtn);
@@ -47,7 +66,9 @@ function ItemDatos(alumnos) {
             this.classList.toggle('active');
             if (this.classList.contains('active')) {
                 checkBtn.classList.remove('active');
-                registrarAsistencia(alumno.id, 'No'); // Función para registrar inasistencia
+                asistenciasTemporales[alumno.id] = 'No';
+            } else {
+                delete asistenciasTemporales[alumno.id];
             }
         });
         itemContainer.appendChild(xBtn);
@@ -81,38 +102,52 @@ function ItemDatos(alumnos) {
     dateContainer.appendChild(dateDisplay);
     buttonDateContainer.appendChild(dateContainer);
     
+    // Botón Guardar
+    const saveButton = document.createElement('button');
+    saveButton.className = 'save-button';
+    saveButton.textContent = 'Guardar';
+    saveButton.addEventListener('click', async () => {
+        await guardarAsistencias(asistenciasTemporales);
+    });
+    buttonDateContainer.appendChild(saveButton);
+    
     listadosAl.appendChild(buttonDateContainer);
     
     return listadosAl;
 }
 
-// Función para registrar asistencia
-async function registrarAsistencia(alumnoId, estado) {
+// Función para guardar todas las asistencias
+async function guardarAsistencias(asistencias) {
     try {
         const usuario = JSON.parse(localStorage.getItem('usuario'));
-        const response = await fetch('http://localhost:3005/asistencia', {
+        const grado_id = usuario.grado_id;
+        
+        const asistenciasArray = Object.entries(asistencias).map(([alumno_id, estado]) => ({
+            usuario_id: usuario.id,
+            grado_id,
+            alumnos_id: alumno_id,
+            estado
+        }));
+        
+        const response = await fetch('http://localhost:3005/asistencia/multiple', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: JSON.stringify({
-                usuario_id: usuario.id,
-                grado_id: usuario.grado_id,
-                alumnos_id: alumnoId,
-                estado: estado
-            })
+            body: JSON.stringify(asistenciasArray)
         });
         
         const data = await response.json();
         
         if (!response.ok) {
-            throw new Error(data.mensaje || 'Error al registrar asistencia');
+            throw new Error(data.mensaje || 'Error al guardar asistencias');
         }
         
-        console.log('Asistencia registrada:', data);
+        alert('Asistencias guardadas correctamente');
+        console.log('Asistencias guardadas:', data);
     } catch (error) {
-        console.error('Error al registrar asistencia:', error);
-        alert('Error al registrar asistencia');
+        console.error('Error al guardar asistencias:', error);
+        alert('Error al guardar asistencias: ' + error.message);
     }
 }
 

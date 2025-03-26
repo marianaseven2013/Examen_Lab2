@@ -10,14 +10,15 @@
 .login-box {
     width: 100%;
     max-width: 400px;
-    background-color: rgba(255, 255, 255, 0.95);
-    border-radius: 12px;
+    border: 1px solid white;
+    border-radius: 4px;
     padding: 40px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(224, 224, 224, 0.2);
+    height: 40rem;
 }
 
 .login-title {
-    color: #2c3e50;
+    color: #ffffff;
     text-align: center;
     margin-bottom: 30px;
     font-size: 24px;
@@ -30,7 +31,7 @@
 .form-label {
     display: block;
     margin-bottom: 8px;
-    color: #34495e;
+    color: #ffffff;
     font-size: 14px;
     font-weight: 500;
 }
@@ -53,7 +54,9 @@
 .login-button {
     width: 100%;
     padding: 12px;
-    background-color: #3498db;
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url(https://i.pinimg.com/736x/12/88/da/1288da5c09a003c280cbdfbc14f8a44c.jpg) center/cover;
     color: white;
     border: none;
     border-radius: 6px;

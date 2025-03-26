@@ -96,7 +96,6 @@ async function mostrarItemDatos(grado_id) {
           throw new Error(alumnos.mensaje || 'Error al obtener alumnos');
       }
       
-      // Pasar los alumnos al componente ItemDatos
       DOM.appendChild(ItemDatos(alumnos));
       
   } catch (error) {
