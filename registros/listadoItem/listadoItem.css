@@ -1,0 +1,209 @@
+/* Estilos mejorados para ItemDatos (Asistencia) */
+.listAl {
+    width: 95%;
+    max-width: 1200px;
+    margin: 20px auto;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+.header {
+    background: linear-gradient(135deg, #3498db, #2c3e50);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.TituloH {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    margin: 0;
+    letter-spacing: 1px;
+}
+
+/* Contenedor principal de la lista */
+.flist {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+    margin-bottom: 30px;
+    background: 
+        linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), 
+        url('https://images.pexels.com/photos/4252167/pexels-photo-4252167.jpeg') center/cover;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Cada item de alumno */
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    border-radius: 8px;
+    padding: 12px 15px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.list-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.item-content {
+    flex-grow: 1;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* Contenedor de botones */
+.attendance-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.check-btn, .x-btn {
+    border: none;
+    border-radius: 50%;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.check-btn {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+}
+
+.x-btn {
+    background-color: #ffebee;
+    color: #c62828;
+}
+
+.check-btn:hover {
+    background-color: #c8e6c9;
+}
+
+.x-btn:hover {
+    background-color: #ffcdd2;
+}
+
+.check-btn.active {
+    background-color: #4CAF50;
+    color: white;
+    box-shadow: 0 0 10px 3px rgba(76, 175, 80, 0.4);
+}
+
+.x-btn.active {
+    background-color: #f44336;
+    color: white;
+    box-shadow: 0 0 10px 3px rgba(244, 67, 54, 0.4);
+}
+
+/* Sección inferior con fecha y botones */
+.button-date-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    padding: 15px 20px;
+    background: linear-gradient(rgba(52, 152, 219, 0.9), rgba(41, 128, 185, 0.9));
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.add-button {
+    background-color: #b97629;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 12px 25px;
+    min-width: 150px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.add-button:hover {
+    background-color: #9c611d;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.add-button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.date-container {
+    padding: 12px 20px;
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.9);
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.current-date {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .flist {
+        grid-template-columns: 1fr;
+    }
+    
+    .button-date-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .header {
+        font-size: 2rem;
+    }
+    
+    .TituloH {
+        font-size: 1.3rem;
+    }
+}
+
+/* Efectos de animación */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.list-item {
+    animation: fadeIn 0.3s ease forwards;
+}
+
+.list-item:nth-child(odd) {
+    animation-delay: 0.1s;
+}
+
+.list-item:nth-child(even) {
+    animation-delay: 0.2s;
+}

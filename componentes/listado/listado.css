@@ -1,0 +1,90 @@
+/* Contenedor principal */
+.CuadrosClases {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columnas para las secciones */
+    gap: 20px; /* Espacio entre elementos */
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto; /* Altura automática para el contenedor */
+}
+
+/* Estilo para cada sección */
+.seccion-nursery, .seccion-primaria-menor, .seccion-primaria-mayor, .seccion-basicos, .seccion-diversificado {
+    display: grid;
+    grid-template-columns: 1fr; /* Una sola columna por cada sección */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+/* Títulos de las secciones */
+.titulo-seccion {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+    background-color: #f7e78c;
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px; /* Espacio debajo del título */
+}
+
+/* Botones de las clases */
+.btn-clase {
+    padding: 10px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #2ecc71;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Cambio de color al pasar el mouse */
+.btn-clase:hover {
+    background-color: #27ae60;
+}
+
+/* Estilos específicos para las secciones */
+
+/* Nursery */
+.nursery .btn-clase {
+    background-color: #e67e22; /* Naranja */
+}
+.nursery .btn-clase:hover {
+    background-color: #d35400;
+}
+
+/* Primaria Menor */
+.primaria-menor .btn-clase {
+    background-color: #9b59b6; /* Morado */
+}
+.primaria-menor .btn-clase:hover {
+    background-color: #8e44ad;
+}
+
+/* Primaria Mayor */
+.primaria-mayor .btn-clase {
+    background-color: #3498db; /* Azul */
+}
+.primaria-mayor .btn-clase:hover {
+    background-color: #2980b9;
+}
+
+/* Básicos */
+.basicos .btn-clase {
+    background-color: #e74c3c; /* Rojo */
+}
+.basicos .btn-clase:hover {
+    background-color: #c0392b;
+}
+
+/* Diversificado */
+.diversificado .btn-clase {
+    background-color: #1abc9c; /* Verde agua */
+}
+.diversificado .btn-clase:hover {
+    background-color: #16a085;
+}
