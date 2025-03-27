@@ -1,4 +1,4 @@
-function verificarToken() {
+/* function verificarToken() {
     const token = localStorage.getItem('token');
    
     if (!token) {
@@ -36,4 +36,4 @@ function verificarToken() {
  
  export {verificarToken}
  
- 
+  */

@@ -4,7 +4,7 @@ function h_Header(){
    
     let tittu = document.createElement('h1');
     tittu.className = "TituloH";
-    tittu.innerText = "Presiona Tu Grado Para Marcar Asistencia";
+    tittu.innerText = "Marca ✔ si asistio o ✘ si estubo ausente";
 
     headd.appendChild(tittu);
     return headd;

@@ -7,8 +7,8 @@
  grid-template-rows: repeat(6, 1fr);
     margin-bottom: 30px;
     background: 
-        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-        url(https://media.istockphoto.com/id/1387323638/photo/hand-taking-notes-using-laptop-computer-working-online-from-home-student-studying-learning.jpg?s=612x612&w=0&k=20&c=wVdy2V6WNw9qHnK_odpgJW4iaCQisi9iJylEOU1tXfk=) center/cover;
+        linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), 
+        url(https://media.licdn.com/dms/image/v2/C4E16AQF4Ux5vmN8ybw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1631498966967?e=2147483647&v=beta&t=sZrWDV1VFfQ4mhm0jdkh3cgtHVlOZkIiAmA4LWGoXAM) center/cover;
     padding: 20px;
     border-radius: 8px;
     box-shadow: inset 0 0 10px rgba(0,0,0,0.1);
@@ -19,7 +19,7 @@
     justify-content: space-between;
     align-items: center;
     background: transparent;
-    border: 1px solid wheat;
+    border: 4px solid wheat;
     border-radius: 8px;
     padding: 12px 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
@@ -33,9 +33,9 @@
 
 .item-content {
     flex-grow: 1;
-    font-size: 2.5rem;
+    font-size: 5rem;
     font-weight: 500;
-    color: wheat;
+    color: rgb(0, 0, 0);
     font-weight: bold;
 
 }
@@ -47,7 +47,7 @@
 
 .check-btn, .x-btn {
     border: none;
-    border-radius: 50%;
+    border-radius: 20%;
     font-size: 1.3rem;
     cursor: pointer;
     transition: all 0.3s;
@@ -57,15 +57,16 @@
     align-items: center;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    border: 1px solid black;
 }
 
 .check-btn {
-    background-color: #e8f5e9;
+    background-color: #99cf9e;
     color: #2e7d32;
 }
 
 .x-btn {
-    background-color: #ffebee;
+    background-color: #d3c1c3;
     color: #c62828;
 }
 
@@ -96,7 +97,7 @@
     margin-top: 30px;
     background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-        url(https://media.istockphoto.com/id/1387323638/photo/hand-taking-notes-using-laptop-computer-working-online-from-home-student-studying-learning.jpg?s=612x612&w=0&k=20&c=wVdy2V6WNw9qHnK_odpgJW4iaCQisi9iJylEOU1tXfk=) center/cover;    
+        url(https://images.pexels.com/photos/1335971/pexels-photo-1335971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover;   
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
@@ -104,19 +105,20 @@
 .date-container {
     padding: 12px 20px;
     border-radius: 6px;
-    background: rgba(255, 255, 255, 0.9);
     text-align: center;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: black;
+
  
 }
 
 .current-date {
-    font-size: 1.3rem;
+    font-size: 2rem;
     font-weight: bold;
-    color: #2c3e50;
+    color: #ffffff;
+    background-color: black;
 }
 
-/* Responsive Design */
 @media (max-width: 375px) {
     .flist {
         grid-template-columns: 1fr;
@@ -136,7 +138,6 @@
     }
 }
 
-/* Efectos de animación */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(10px); }
     to { opacity: 1; transform: translateY(0); }
@@ -155,11 +156,11 @@
 }
 
 .save-button {
-    background: transparent;
+    background: black;
     border: 1px solid white;
     color: white;
     border-radius: 6px;
-    font-size: 1.2rem;
+    font-size: 2rem;
     font-weight: bold;
     cursor: pointer;
     transition: all 0.3s;
@@ -169,10 +170,21 @@
     margin-left: 10px;
 }
 
-.save-button:hover {
-    background-color: #2980b9;
-    transform: translateY(-2px);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+.save-button:hover{
+    background: transparent;
+    cursor: pointer;
+    border: 5px solid rgb(0, 0, 0);
+   color: rgb(0, 0, 0);  
+   background: 
+   linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+   url(https://i.pinimg.com/736x/0e/45/d4/0e45d4e07a13da1fc1268b060a990d46.jpg) center/cover; 
+      
+
+   width: 19rem;
+   transition: 0.3s;
+   font-weight: bold;
+   color: white;
+   border: 3px solid white;
 }
 
 .save-button:active {
@@ -185,7 +197,6 @@
     cursor: not-allowed;
 }
 
-/* Estilos para la lista de alumnos */
 .item-content {
     flex-grow: 1;
     font-size: 1.8rem;

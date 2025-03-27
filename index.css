@@ -1,0 +1,44 @@
+.logout-btn {
+    color: white;
+    width: 15rem;
+    height: 5rem;
+    margin-left: 80rem; 
+    display: block;  
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url(https://images.pexels.com/photos/1335971/pexels-photo-1335971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover; 
+    cursor: pointer;   
+    border-radius: 2px;
+    font-size: 2rem;
+    font-weight: bold;
+    border: 5px solid black;
+
+}
+
+.logout-btn:hover {
+  cursor: pointer;
+     border: 5px solid rgb(0, 0, 0);
+    color: rgb(0, 0, 0);  
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
+    url(https://media.istockphoto.com/id/1360112681/photo/abstract-red-and-black-are-light-pattern-with-the-gradient-is-the-with-floor-wall-metal.jpg?s=612x612&w=0&k=20&c=hbtqE58fn0zORRV_4dCwiPBKDPc1S8K6X1eprZ2xuT4=) center/cover; 
+       
+
+    width: 19rem;
+    transition: 0.2s;
+    font-weight: bold;
+    color: white;
+
+}
+
+@media (max-width: 375px) {
+    .logout-btn {
+        color: white;
+      
+        display: block;  
+        background: black;
+       
+    }
+    
+    
+}

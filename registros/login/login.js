@@ -1,4 +1,4 @@
-function loggin() {
+function Loginp_p() {
     let loginContainer = document.createElement('div');
     loginContainer.className = 'login-container';
     
@@ -12,7 +12,6 @@ function loggin() {
     let form = document.createElement('form');
     form.id = 'login-form';
     
-    // Campo de usuario
     let userField = document.createElement('div');
     userField.className = 'form-field';
     
@@ -65,4 +64,6 @@ function loggin() {
     return loginContainer;
 }
 
-export { loggin };
+export { Loginp_p };
+
+//loggin

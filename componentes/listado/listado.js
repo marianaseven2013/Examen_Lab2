@@ -1,4 +1,4 @@
-import { h_Header } from '../header/header.js';
+/* import { h_Header } from '../header/header.js';
 
 function listClases(grado_id) {
     let listadoclasess = document.createElement('div');
@@ -90,4 +90,4 @@ function clasePermitidaParaGrado(clase, grado_id) {
     return true;
 }
 
-export { listClases };
+export { listClases }; */

@@ -8,9 +8,10 @@
     overflow: hidden;
     width: 100%; 
     
-    background: 
+
+        background: 
         linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
-        url(https://media.licdn.com/dms/image/v2/C4E16AQF4Ux5vmN8ybw/profile-displaybackgroundimage-shrink_200_800/profile-displaybackgroundimage-shrink_200_800/0/1631498966967?e=2147483647&v=beta&t=sZrWDV1VFfQ4mhm0jdkh3cgtHVlOZkIiAmA4LWGoXAM) center/cover;
+        url(https://images.pexels.com/photos/1335971/pexels-photo-1335971.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1) center/cover;  
 }
 
 .TituloH {

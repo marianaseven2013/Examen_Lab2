@@ -4,23 +4,18 @@ function ItemDatos(alumnos) {
     let listadosAl = document.createElement('div');
     listadosAl.className = "listAl";
 
-    // Agregar header
     const header = h_Header();
     listadosAl.appendChild(header);
     
-    // Lista de elementos
     let foms = document.createElement('div');
     foms.className = "flist";
     
-    // Objeto para almacenar las asistencias temporalmente
     const asistenciasTemporales = {};
     
-    // Usar los alumnos recibidos en lugar de la lista estática
     alumnos.forEach((alumno) => {
         const itemContainer = document.createElement('div');
         itemContainer.className = 'list-item';
         
-        // Contenido del item (nombre + apellido)
         const nameContainer = document.createElement('div');
         nameContainer.className = 'item-content';
         
@@ -41,7 +36,7 @@ function ItemDatos(alumnos) {
         nameContainer.appendChild(nameLine);
         itemContainer.appendChild(nameContainer);
         
-        // Botón ✓ (Asistió)
+        //Boton chequesito
         const checkBtn = document.createElement('button');
         checkBtn.className = 'check-btn';
         checkBtn.textContent = '✓';
@@ -57,7 +52,7 @@ function ItemDatos(alumnos) {
         });
         itemContainer.appendChild(checkBtn);
         
-        // Botón X (No asistió)
+        //Boton Equis
         const xBtn = document.createElement('button');
         xBtn.className = 'x-btn';
         xBtn.textContent = 'X';
@@ -82,7 +77,7 @@ function ItemDatos(alumnos) {
     const buttonDateContainer = document.createElement('div');
     buttonDateContainer.className = 'button-date-container';
     
-    // Fecha (actualizable)
+    // Esto es para que la fecha se valla actualizando
     const dateContainer = document.createElement('div');
     dateContainer.className = 'date-container';
     const dateDisplay = document.createElement('div');

@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+/* document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('loginForm');
     loginForm.addEventListener('submit', async function (event) {
         event.preventDefault();
@@ -110,3 +110,4 @@ async function cargarClases() {
     document.body.appendChild(await listClases());
 }
 
+ */
